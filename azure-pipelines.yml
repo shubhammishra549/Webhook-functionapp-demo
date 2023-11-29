@@ -1,0 +1,16 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job: RunPowerShellScript
+  steps:
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Your PowerShell script goes here
+        Select-AzSubscription -SubscriptionName "PMI Non-Production"
+        # ... other PowerShell commands
